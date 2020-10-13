@@ -14,7 +14,7 @@ router.get('/', ( req, res )=>{
     let queryText = 'SELECT * FROM "history";'
     pool.query(queryText).then((result)=>{
         console.log('result from database', result.rows);
-        res.send( history );
+        res.send( result.rows );
     });
 
 }) // end /math GET
